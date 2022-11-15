@@ -1,3 +1,74 @@
-body {
-    background-color: red;
+/* UA style reset begins */
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
 }
+
+html {
+    cursor: default;
+}
+
+body {
+    margin: 0;
+    background-color: blue;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+button,
+input,
+select {
+    margin: 0;
+}
+
+/* UA style reset ends */
+
+/* user style begins */
+html,
+body {
+    height: 100%;
+}
+
+.content {
+    height: 100%;
+    background-color: #F8FAF0;
+    --header-height: 60px;
+    --footer-height: 30px;
+}
+
+.header {
+    height: var(--header-height);
+    line-height: var(--header-height);
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+.main {
+    height: calc(100% - (var(--header-height) + var(--footer-height)));
+}
+
+.footer {
+    height: var(--footer-height);
+    line-height: var(--footer-height);
+    color: white;
+    font-size: 0.85rem;
+}
+
+.header,
+.footer {
+    text-align: center;
+    background-color: #4169e1;
+}
+
+/* user style ends */

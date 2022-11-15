@@ -4,12 +4,14 @@ const pageLoad = () => {
 
     const headerElement = document.createElement('div');
     headerElement.classList.add('header');
+    headerElement.textContent = 'Todo List App';
 
     const mainElement = document.createElement('div');
     mainElement.classList.add('main');
 
     const footerElement = document.createElement('div');
     footerElement.classList.add('footer');
+    footerElement.textContent = 'DasTapan All Rights Reserved';
 
     document.body.appendChild(contentDiv);
     contentDiv.append(headerElement, mainElement, footerElement);
