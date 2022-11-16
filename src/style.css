@@ -94,9 +94,9 @@ h1.project-heading {
 }
 
 .task-container {
-    width: 1150px;
+    width: max(700px, 78%);
     height: 500px;
-    border-radius: 10px;
+    border-radius: 15px;
 
     margin: 0 auto;
     background-color: sienna;
