@@ -24,7 +24,7 @@ const pageLoad = () => {
     midsection.classList.add('midsection');
 
     // add to DOM
-    mainElement.append(sidebar,midsection);
+    mainElement.append(sidebar, midsection);
 
     const projectHeading = document.createElement('h1');
     projectHeading.classList.add('project-heading');
@@ -35,6 +35,34 @@ const pageLoad = () => {
 
     //add to DOM
     midsection.append(projectHeading, taskContainer);
+
+    const sidebarTop = document.createElement('div');
+    sidebarTop.classList.add('sidebar-top');
+
+    const sidebarBottom = document.createElement('div');
+    sidebarBottom.classList.add('sidebar-bottom');
+
+    // add to DOM
+    sidebar.append(sidebarTop, sidebarBottom);
+
+    const inboxLink = document.createElement('a');
+    inboxLink.classList.add('inbox');
+    inboxLink.textContent = 'Inbox';
+
+    const todayLink = document.createElement('a');
+    todayLink.classList.add('today');
+    todayLink.textContent = 'Today';
+
+    const sevenDaysLink = document.createElement('a');
+    sevenDaysLink.classList.add('seven-days');
+    sevenDaysLink.textContent = '7 Days';
+
+    const importantLink = document.createElement('a');
+    importantLink.classList.add('important');
+    importantLink.textContent = 'Important';
+
+    //add to DOM
+    sidebarTop.append(inboxLink, todayLink, sevenDaysLink, importantLink);
 };
 
 export default pageLoad;
