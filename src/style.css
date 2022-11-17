@@ -12,7 +12,6 @@ html {
 
 body {
     margin: 0;
-    background-color: blue;
 }
 
 h1 {
@@ -37,9 +36,11 @@ body {
 body {
     font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Ubuntu, 'Open Sans', sans-serif;
     font-size: 16px;
+    color: whitesmoke;
 }
 
-a:hover {
+a:hover,
+button.add-project:hover {
     cursor: pointer;
 }
 
@@ -54,6 +55,8 @@ a:hover {
     height: var(--header-height);
     line-height: var(--header-height);
     font-weight: bold;
+
+    background-color: #E23E57;
     color: whitesmoke;
 }
 
@@ -70,54 +73,64 @@ a:hover {
 .main .sidebar {
     width: clamp(210px, 25vw, 18.9rem);
     flex-shrink: 0;
-    background-color: yellow;
+    border-right: 1px solid #118AB2;
+    background-color: #88304E;
 }
 
 .sidebar-top {
     padding: 20px;
     height: 30%;
-    background-color: darkmagenta;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 
 .sidebar-top>div {
     margin-bottom: 15px;
     display: flex;
+    padding: 2px;
+}
+
+.sidebar-top > div a {
+    margin-top: 2px;
+}
+
+.sidebar-top>div:hover {
+    background-color: #000000;
 }
 
 .sidebar-top img {
     width: 24px;
     height: 24px;
 
-    margin-right: 5px;
+    margin-right: 8px;
 }
 
 .sidebar-bottom {
     padding: 20px;
     height: 70%;
-    background-color: orangered;
-    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .sidebar-bottom .project-array {
-    text-align: center;
-    background-color: cornflowerblue;
     margin-bottom: 10px;
 }
 
-.sidebar-bottom .action {
-    background-color: lawngreen;
+.sidebar .action {
+    text-align: center;
 }
 
 .main .midsection {
     overflow: auto;
     flex-grow: 1;
-    background-color: black;
+
+    background-color: #522546;
 }
 
 .footer {
     height: var(--footer-height);
     line-height: var(--footer-height);
+
+    background-color: #311D3F;
     color: white;
     font-size: 0.85rem;
 }
@@ -125,7 +138,6 @@ a:hover {
 .header,
 .footer {
     text-align: center;
-    background-color: #4169e1;
 }
 
 h1.project-heading {
@@ -138,7 +150,7 @@ h1.project-heading {
     border-radius: 15px;
 
     margin: 0 auto;
-    background-color: sienna;
+    background: linear-gradient(to right, #ddd6f3, #faaca8);
 }
 
 button.add-project {

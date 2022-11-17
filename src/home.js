@@ -10,7 +10,6 @@ const pageLoad = () => {
 
     const headerElement = document.createElement('div');
     headerElement.classList.add('header');
-    headerElement.textContent = 'Todo List App';
 
     const mainElement = document.createElement('div');
     mainElement.classList.add('main');
