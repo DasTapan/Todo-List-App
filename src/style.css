@@ -78,23 +78,41 @@ a:hover {
     height: 30%;
     background-color: darkmagenta;
     font-size: 1.3rem;
+}
 
+.sidebar-top>div {
+    margin-bottom: 15px;
     display: flex;
-    flex-direction: column;
+}
 
-    justify-content: space-between;
+.sidebar-top img {
+    width: 24px;
+    height: 24px;
+
+    margin-right: 5px;
 }
 
 .sidebar-bottom {
     padding: 20px;
     height: 70%;
     background-color: orangered;
+    text-align: center;
+}
+
+.sidebar-bottom .project-array {
+    text-align: center;
+    background-color: cornflowerblue;
+    margin-bottom: 10px;
+}
+
+.sidebar-bottom .action {
+    background-color: lawngreen;
 }
 
 .main .midsection {
     overflow: auto;
     flex-grow: 1;
-    background-color: rebeccapurple;
+    background-color: black;
 }
 
 .footer {
@@ -121,6 +139,16 @@ h1.project-heading {
 
     margin: 0 auto;
     background-color: sienna;
+}
+
+button.add-project {
+    background-image: url('./Icons/add-icon.png');
+    display: block;
+
+    height: 51px;
+    width: 52px;
+    margin: 0 auto 5px;
+    border-radius: 50%;
 }
 
 /* my style ends */
