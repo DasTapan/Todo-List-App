@@ -2,7 +2,6 @@ import inboxImg from './Icons/inbox-icon.png';
 import calendarImg from './Icons/calendar-icon.png';
 import impImg from './Icons/important-icon.png';
 import todayImg from './Icons/today-icon.png';
-import addImg from './Icons/add-icon.png';
 
 const pageLoad = () => {
     const contentDiv = document.createElement('div');
@@ -16,7 +15,7 @@ const pageLoad = () => {
 
     const footerElement = document.createElement('div');
     footerElement.classList.add('footer');
-    footerElement.textContent = 'DasTapan All Rights Reserved';
+    footerElement.textContent = '© Made by DasTapan';
 
     // add to DOM
     document.body.appendChild(contentDiv);
