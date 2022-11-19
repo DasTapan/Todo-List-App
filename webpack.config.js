@@ -6,6 +6,8 @@ module.exports = {
     entry: {
         index: './src/index.js',
         home: './src/home.js',
+        task: './src/task.js',
+        logic: './src/logic.js',
     },
     devtool: 'inline-source-map',
     devServer: {

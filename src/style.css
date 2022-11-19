@@ -245,6 +245,7 @@ h1.project-heading {
     width: max(700px, 78%);
     height: 500px;
     border-radius: 15px;
+    padding: 15px;
 
     margin: 0 auto;
     background: linear-gradient(to right, #ddd6f3, #faaca8);
@@ -258,6 +259,42 @@ button.add-project {
     width: 52px;
     margin: 0 auto 5px;
     border-radius: 50%;
+}
+
+.hidden {
+    display: none;
+}
+
+.task-div {
+    height: 100px;
+    background-color: greenyellow;
+    margin-bottom: 10px;
+}
+
+.brief-info {
+    height: 35%;
+    background-color: gray;
+    padding: 5px;
+}
+
+.brief-info button {
+    background-color: chocolate;
+    padding: 1.5px;
+    border: 2px solid black;
+}
+
+.raw-info {
+    height: 65%;
+    background-color: crimson;
+    padding: 5px;
+}
+
+.raw-info button {
+    margin-right: 10px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 3px;
+    background-color: grey;
 }
 
 /* my style ends */
