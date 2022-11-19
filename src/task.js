@@ -1,38 +1,53 @@
+import removeImg from './Icons/remove-icon.png';
+
 const taskLoad = () => {
     const parentElement = document.querySelector('.task-container');
     console.log(parentElement);
     console.log('Har Hindu Sena ho');
     console.log('Har Hindu Sanatani ho');
 
-    const taskDiv = document.createElement('div');
-    taskDiv.classList.add('task-div');
+    for (let i = 0; i < 6; i++) {
+        const taskDiv = document.createElement('div');
+        taskDiv.classList.add('task-div');
 
-    const briefInfoDiv = document.createElement('div');
-    briefInfoDiv.classList.add('brief-info');
+        const briefInfoDiv = document.createElement('div');
+        briefInfoDiv.classList.add('brief-info');
 
-    const demoButton = document.createElement('button');
-    demoButton.classList.add('demo-button');
-    demoButton.textContent = 'Demo';
+        const checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+        const titleSpan = document.createElement('span');
+        titleSpan.classList.add('task-title');
+        titleSpan.textContent = 'Buy Milk';
+        const dateSpan = document.createElement('span');
+        dateSpan.classList.add('due-date');
+        dateSpan.textContent = '23/12/2022';
+        const delButton = document.createElement('button');
+        delButton.classList.add('delete-button');
 
-    // add to DOM
-    briefInfoDiv.append(demoButton);
+        const demoButton = document.createElement('button');
+        demoButton.classList.add('demo-button');
+        demoButton.textContent = 'Demo';
 
-    const rawInfoDiv = document.createElement('div');
-    rawInfoDiv.classList.add('raw-info', 'hidden');
-    // rawInfoDiv.style.display = 'none';
+        // add to DOM
+        briefInfoDiv.append(demoButton);
 
-    const saveButton = document.createElement('button');
-    saveButton.classList.add('save');
-    saveButton.textContent = 'Save';
+        const rawInfoDiv = document.createElement('div');
+        rawInfoDiv.classList.add('raw-info', 'hidden');
 
-    const cancelButton = document.createElement('button');
-    cancelButton.classList.add('cancel');
-    cancelButton.textContent = 'Cancel';
+        const saveButton = document.createElement('button');
+        saveButton.classList.add('save');
+        saveButton.textContent = 'Save';
 
-    // add to DOM
-    rawInfoDiv.append(saveButton, cancelButton);
-    taskDiv.append(briefInfoDiv, rawInfoDiv);
-    parentElement.append(taskDiv);
+        const cancelButton = document.createElement('button');
+        cancelButton.classList.add('cancel');
+        cancelButton.textContent = 'Cancel';
+
+        // add to DOM
+        rawInfoDiv.append(saveButton, cancelButton);
+        taskDiv.append(briefInfoDiv, rawInfoDiv);
+        parentElement.append(taskDiv);
+    }
+
 };
 
 export default taskLoad;
