@@ -6,7 +6,8 @@ const appLogic = (event) => {
 
         switch (className) {
 
-            case 'demo-button':
+            case 'task-title':
+                _targetNode.parentElement.classList.remove('brief-layout');
                 _targetNode.parentElement.classList.add('hidden');
                 _targetNode.parentElement.nextElementSibling.classList.remove('hidden');
                 break;
@@ -14,11 +15,13 @@ const appLogic = (event) => {
             case 'save':
                 _targetNode.parentElement.classList.add('hidden');
                 _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
+                _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
                 break;
 
             case 'cancel':
                 _targetNode.parentElement.classList.add('hidden');
                 _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
+                _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
                 break;
 
             default:

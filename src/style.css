@@ -42,6 +42,8 @@ button {
     /* 1 */
     text-transform: none;
     /* 2 */
+
+    padding: 0;
 }
 
 /**
@@ -274,7 +276,7 @@ button.add-project {
 .task-div {
     height: 145px;
     background-color: greenyellow;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .brief-info {
@@ -283,10 +285,10 @@ button.add-project {
     padding: 5px;
 }
 
-.brief-info button {
-    background-color: chocolate;
-    padding: 1.5px;
-    border: 2px solid black;
+.brief-layout {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 .raw-info {
@@ -323,6 +325,20 @@ button.add-project {
     border: 3px solid var(--scrollbarBG);
 }
 
+button.delete-button {
+    height: 40px;
+    width: 40px;
+    background-image: url('./Icons/remove-icon.png');
+
+    background-color: transparent;
+    background-size: contain;
+    border: 0;
+}
+
+span.task-title:hover {
+    cursor: pointer;
+}
+
 /* Scrollbar style ends */
 
-/* my style ends */
+/* My style ends */

@@ -1,5 +1,3 @@
-import removeImg from './Icons/remove-icon.png';
-
 const taskLoad = () => {
     const parentElement = document.querySelector('.task-container');
     console.log(parentElement);
@@ -11,7 +9,7 @@ const taskLoad = () => {
         taskDiv.classList.add('task-div');
 
         const briefInfoDiv = document.createElement('div');
-        briefInfoDiv.classList.add('brief-info');
+        briefInfoDiv.classList.add('brief-info', 'brief-layout');
 
         const checkBox = document.createElement('input');
         checkBox.setAttribute('type', 'checkbox');
@@ -29,7 +27,7 @@ const taskLoad = () => {
         demoButton.textContent = 'Demo';
 
         // add to DOM
-        briefInfoDiv.append(demoButton);
+        briefInfoDiv.append(checkBox, titleSpan, dateSpan, delButton);
 
         const rawInfoDiv = document.createElement('div');
         rawInfoDiv.classList.add('raw-info', 'hidden');
