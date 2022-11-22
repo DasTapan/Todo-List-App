@@ -32,16 +32,41 @@ const taskLoad = () => {
         const rawInfoDiv = document.createElement('div');
         rawInfoDiv.classList.add('raw-info', 'hidden');
 
-        const saveButton = document.createElement('button');
-        saveButton.classList.add('save');
-        saveButton.textContent = 'Save';
+        // start form
+        const formEdit = document.createElement('form');
+        formEdit.action = '';
+        formEdit.method = 'post';
+        formEdit.classList.add('edit-details');
 
-        const cancelButton = document.createElement('button');
-        cancelButton.classList.add('cancel');
-        cancelButton.textContent = 'Cancel';
+        const formRowOne = document.createElement('div');
+        formRowOne.classList.add('form-row');
+        const titleLabel = document.createElement('label');
+        titleLabel.setAttribute('for', 'title');
+        titleLabel.textContent = 'Title: '
+        const titleInput = document.createElement('input');
+        titleInput.type = 'text';
+        titleInput.id = 'title';
+        titleInput.name = 'title';
+        formRowOne.append(titleLabel, titleInput);
+
+        const formRowTwo = document.createElement('div');
+        formRowTwo.classList.add('form-row');
+        const textAreaLabel = document.createElement('label');
+        textAreaLabel.setAttribute('for', 'details');
+        textAreaLabel.textContent = 'Details: ';
+        const textAreaInput = document.createElement('textarea');
+        textAreaInput.name = 'details';
+        textAreaInput.id = 'details';
+        formRowTwo.append(textAreaLabel, textAreaInput);
+
+        const formRowThree = document.createElement('div');
+        formRowThree.classList.add('form-row');
+
+        formEdit.append(formRowOne, formRowTwo, formRowThree);
+        rawInfoDiv.append(formEdit);
+        // end form
 
         // add to DOM
-        rawInfoDiv.append(saveButton, cancelButton);
         taskDiv.append(briefInfoDiv, rawInfoDiv);
         parentElement.append(taskDiv);
     }
