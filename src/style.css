@@ -140,7 +140,7 @@ body {
 }
 
 a:hover,
-button.add-project:hover {
+button:hover {
     cursor: pointer;
 }
 
@@ -274,8 +274,8 @@ button.add-project {
 }
 
 .task-div {
-    height: 445px;
-    background-color: greenyellow;
+    /* height: 445px; */
+    /* background-color: greenyellow; */
     margin-bottom: 20px;
 }
 
@@ -283,6 +283,7 @@ button.add-project {
     height: 50px;
     background-color: gray;
     padding: 5px;
+    border-radius: 10px;
 }
 
 .brief-layout {
@@ -295,9 +296,70 @@ button.add-project {
     height: 180px;
     width: 60%;
     margin: 0 auto 20px;
-    background-color: crimson;
-    padding: 5px;
+
+    border: 1px solid #D6D9DC;
+    border-radius: 10px;
+    background-color: #F6F7F8;
+    padding: 10px;
 }
+
+/* edit form style begins */
+form.edit-details {
+    color: black;
+    height: 100%;
+}
+
+form.edit-details .form-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+
+form.edit-details .form-row:nth-child(3) {
+    justify-content: center;
+}
+
+form.edit-details .form-row input[type='text'] {
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+form.edit-details .form-row label {
+    width: 65px;
+    text-align: right;
+    margin-right: 5px;
+}
+
+.form-row textarea {
+    width: 42%;
+    min-height: 60px;
+    resize: none;
+
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    margin-right: 20px;
+}
+
+#save-edit {
+    margin-right: 15px;
+    background-color: green;
+}
+
+#cancel-edit {
+    background-color: red;
+}
+
+#save-edit,
+#cancel-edit {
+    font-weight: bold;
+    color: whitesmoke;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+/* edit form style ends */
 
 /* Scrollbar style begins */
 .task-container::-webkit-scrollbar {
