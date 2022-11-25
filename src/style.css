@@ -244,8 +244,28 @@ button:hover {
     text-align: center;
 }
 
-h1.project-heading {
-    text-align: center;
+.project-heading {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-heading span:first-child {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.project-heading span:nth-child(2) {
+    margin-right: 15px;
+}
+
+.project-heading button {
+    width: 28px;
+    height:28px;
+    border-radius: 50%;
+    background-image: url('./Icons/new-task.png');
 }
 
 .task-container {

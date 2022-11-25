@@ -30,9 +30,15 @@ const pageLoad = () => {
     // add to DOM
     mainElement.append(sidebar, midsection);
 
-    const projectHeading = document.createElement('h1');
+    const projectHeading = document.createElement('div');
     projectHeading.classList.add('project-heading');
-    projectHeading.textContent = 'Default Project';
+    const projectName = document.createElement('span');
+    projectName.textContent = 'Default';
+    const taskSpan = document.createElement('span');
+    taskSpan.textContent = 'Add Task';
+    const newTaskButton = document.createElement('button');
+    newTaskButton.id = 'new-task';
+    projectHeading.append(projectName, taskSpan, newTaskButton);
 
     const taskContainer = document.createElement('div');
     taskContainer.classList.add('task-container');
