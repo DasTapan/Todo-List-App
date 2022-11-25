@@ -263,7 +263,7 @@ button:hover {
 
 .project-heading button {
     width: 28px;
-    height:28px;
+    height: 28px;
     border-radius: 50%;
     background-image: url('./Icons/new-task.png');
 }
@@ -380,6 +380,40 @@ form.edit-details .form-row label {
 }
 
 /* edit form style ends */
+
+/* project add form */
+#add-project {
+    margin-bottom: 10px;
+}
+
+form.project-pop-up {
+    background-color: red;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.project-pop-up>input[type='text'] {
+    width: 95%;
+    background-color: #FFFFFF;
+    border: 1px solid #D6D9DC;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+#save-project {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+#save-project,
+#cancel-project {
+    font-weight: bold;
+    padding: 4px 8px;
+    border-radius: 3px;
+}
+
+/* project add form */
 
 /* Scrollbar style begins */
 .task-container::-webkit-scrollbar {

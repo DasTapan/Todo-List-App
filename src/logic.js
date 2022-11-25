@@ -1,6 +1,8 @@
 const appLogic = (event) => {
     const _targetNode = event.target;
     const _className = _targetNode.className;
+    console.log(_targetNode.parentElement);
+    console.log(_targetNode.parentElement.lastElementChild);
 
     const _toggle = (className) => {
 
@@ -22,6 +24,14 @@ const appLogic = (event) => {
                 _targetNode.parentElement.classList.add('hidden');
                 _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
                 _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
+                break;
+
+            case 'add-project':
+                _targetNode.parentElement.lastElementChild.classList.toggle('hidden');
+                break;
+
+            case 'project-change':
+                _targetNode.parentElement.classList.toggle('hidden');
                 break;
 
             default:

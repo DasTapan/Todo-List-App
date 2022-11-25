@@ -123,8 +123,26 @@ const pageLoad = () => {
     actionSpan.setAttribute('id', 'add-project');
     actionSpan.textContent = 'Add Project';
 
+    const projectPopUp = document.createElement('form');
+    projectPopUp.action = '';
+    projectPopUp.method = '';
+    projectPopUp.classList.add('project-pop-up','hidden');
+    const projectNameInput = document.createElement('input');
+    projectNameInput.type = 'text';
+    projectNameInput.id = 'name';
+    projectNameInput.name = 'name';
+    const saveProjectButton = document.createElement('button');
+    saveProjectButton.textContent = 'Save';
+    saveProjectButton.id = 'save-project';
+    saveProjectButton.classList.add('project-change');
+    const cancelProjectButton = document.createElement('button');
+    cancelProjectButton.textContent = 'Cancel';
+    cancelProjectButton.id = 'cancel-project';
+    projectPopUp.append(projectNameInput, saveProjectButton, cancelProjectButton);
+
+
     // add to DOM
-    actionDiv.append(addProjectButton, actionSpan);
+    actionDiv.append(addProjectButton, actionSpan, projectPopUp);
     sidebarBottom.append(projectArray, actionDiv);
 };
 
