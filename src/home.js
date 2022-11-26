@@ -38,7 +38,78 @@ const pageLoad = () => {
     taskSpan.textContent = 'Add Task';
     const newTaskButton = document.createElement('button');
     newTaskButton.id = 'new-task';
-    projectHeading.append(projectName, taskSpan, newTaskButton);
+    newTaskButton.classList.add('new-task');
+
+    // create task form
+    const newTaskForm = document.createElement('form');
+    newTaskForm.action = '';
+    newTaskForm.method = '';
+    newTaskForm.classList.add('task-form', 'hidden');
+
+    const formRowOne = document.createElement('div');
+    formRowOne.classList.add('form-row');
+    const titleLabel = document.createElement('label');
+    titleLabel.setAttribute('for', 'title');
+    titleLabel.textContent = 'Title :'
+    const titleInput = document.createElement('input');
+    titleInput.type = 'text';
+    titleInput.id = 'title';
+    titleInput.name = 'title';
+    formRowOne.append(titleLabel, titleInput);
+
+    const formRowTwo = document.createElement('div');
+    formRowTwo.classList.add('form-row');
+    const textAreaLabel = document.createElement('label');
+    textAreaLabel.setAttribute('for', 'details');
+    textAreaLabel.textContent = 'Details :';
+    const textAreaInput = document.createElement('textarea');
+    textAreaInput.name = 'details';
+    textAreaInput.id = 'details';
+    formRowTwo.append(textAreaLabel, textAreaInput);
+
+    const formRowThree = document.createElement('div');
+    formRowThree.classList.add('form-row');
+    const priorityLabel = document.createElement('label');
+    priorityLabel.textContent = 'Priority :';
+    priorityLabel.setAttribute('for', 'priority');
+    const prioritySelect = document.createElement('select');
+    prioritySelect.name = 'priority';
+    prioritySelect.id = 'priority';
+    const optionOne = document.createElement('option');
+    optionOne.textContent = 'High';
+    optionOne.value = 'h';
+    const optionTwo = document.createElement('option');
+    optionTwo.textContent = 'Medium';
+    optionTwo.value = 'm';
+    const optionThree = document.createElement('option');
+    optionThree.textContent = 'Low';
+    optionThree.value = 'l';
+    prioritySelect.append(optionOne, optionTwo, optionThree);
+    formRowThree.append(priorityLabel, prioritySelect);
+
+    const formRowFour = document.createElement('div');
+    formRowFour.classList.add('form-row');
+    const dueDateLabel = document.createElement('label');
+    dueDateLabel.textContent = 'Date :';
+    dueDateLabel.setAttribute('for', 'due-date');
+    const dateInput = document.createElement('input');
+    dateInput.type = 'date';
+    dateInput.name = 'due-date';
+    dateInput.id = 'due-date';
+    formRowFour.append(dueDateLabel, dateInput);
+
+    const formRowFive = document.createElement('div');
+    formRowFive.classList.add('form-row');
+    const saveTaskButton = document.createElement('button');
+    saveTaskButton.classList.add('task-button');
+    saveTaskButton.textContent = 'Save';
+    const cancelTaskButton = document.createElement('button');
+    cancelTaskButton.classList.add('task-button');
+    cancelTaskButton.textContent = 'Cancel';
+    formRowFive.append(saveTaskButton, cancelTaskButton);
+
+    newTaskForm.append(formRowOne, formRowTwo, formRowThree, formRowFour, formRowFive);
+    projectHeading.append(projectName, taskSpan, newTaskButton, newTaskForm);
 
     const taskContainer = document.createElement('div');
     taskContainer.classList.add('task-container');
@@ -126,7 +197,7 @@ const pageLoad = () => {
     const projectPopUp = document.createElement('form');
     projectPopUp.action = '';
     projectPopUp.method = '';
-    projectPopUp.classList.add('project-pop-up','hidden');
+    projectPopUp.classList.add('project-pop-up', 'hidden');
     const projectNameInput = document.createElement('input');
     projectNameInput.type = 'text';
     projectNameInput.id = 'name';

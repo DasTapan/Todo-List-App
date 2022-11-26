@@ -1,8 +1,6 @@
 const appLogic = (event) => {
     const _targetNode = event.target;
     const _className = _targetNode.className;
-    console.log(_targetNode.parentElement);
-    console.log(_targetNode.parentElement.lastElementChild);
 
     const _toggle = (className) => {
 
@@ -31,6 +29,14 @@ const appLogic = (event) => {
                 break;
 
             case 'project-change':
+                _targetNode.parentElement.classList.toggle('hidden');
+                break;
+
+            case 'new-task':
+                _targetNode.nextElementSibling.classList.toggle('hidden');
+                break;
+
+            case 'task-button':
                 _targetNode.parentElement.classList.toggle('hidden');
                 break;
 
