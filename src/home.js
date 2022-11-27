@@ -182,7 +182,15 @@ const pageLoad = () => {
 
     const projectArray = document.createElement('div');
     projectArray.classList.add('project-array');
-    projectArray.textContent = 'Default Project';
+    const projectOne = document.createElement('div');
+    projectOne.classList.add('project-one');
+    const projectOneNameSpan = document.createElement('span');
+    projectOneNameSpan.classList.add('project-name');
+    projectOneNameSpan.textContent = 'Default Project';
+    const deleteProjectButton = document.createElement('button');
+    deleteProjectButton.classList.add('del-btn');
+    projectOne.append(projectOneNameSpan, deleteProjectButton);
+    projectArray.append(projectOne);
 
     const actionDiv = document.createElement('div');
     actionDiv.classList.add('action');

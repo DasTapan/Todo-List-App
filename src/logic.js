@@ -1,6 +1,8 @@
 const appLogic = (event) => {
     const _targetNode = event.target;
     const _className = _targetNode.className;
+    console.log(_targetNode);
+    console.log(_targetNode.parentElement);
 
     const _toggle = (className) => {
 
@@ -37,7 +39,7 @@ const appLogic = (event) => {
                 break;
 
             case 'task-button':
-                _targetNode.parentElement.classList.toggle('hidden');
+                _targetNode.parentElement.parentElement.classList.toggle('hidden');
                 break;
 
             default:

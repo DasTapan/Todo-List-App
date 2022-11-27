@@ -214,7 +214,25 @@ button:hover {
 }
 
 .sidebar-bottom .project-array {
-    margin-bottom: 50px;
+    height: 200px;
+    /* background-color: red; */
+}
+
+.project-array>div {
+    /* background-color: chartreuse; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.project-array>div button {
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background-image: url('./Icons/delete-icon.png');
+    background-size: cover;
 }
 
 .sidebar .action {
