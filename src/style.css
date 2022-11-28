@@ -214,16 +214,15 @@ button:hover {
 }
 
 .sidebar-bottom .project-array {
-    height: 200px;
     /* background-color: red; */
 }
 
 .project-array>div {
     /* background-color: chartreuse; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 15px;
 }
 
 .project-array>div button {

@@ -1,8 +1,6 @@
 const appLogic = (event) => {
     const _targetNode = event.target;
     const _className = _targetNode.className;
-    console.log(_targetNode);
-    console.log(_targetNode.parentElement);
 
     const _toggle = (className) => {
 

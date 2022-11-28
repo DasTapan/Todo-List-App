@@ -1,7 +1,13 @@
+import masterArray from './master-structure.js';
 import inboxImg from './Icons/inbox-icon.png';
 import calendarImg from './Icons/calendar-icon.png';
 import impImg from './Icons/important-icon.png';
 import todayImg from './Icons/today-icon.png';
+
+console.log(masterArray);
+console.log(masterArray[0][0]);
+console.log(masterArray[1][0]);
+console.log(masterArray.length);
 
 const pageLoad = () => {
     const contentDiv = document.createElement('div');
@@ -108,6 +114,7 @@ const pageLoad = () => {
     cancelTaskButton.textContent = 'Cancel';
     formRowFive.append(saveTaskButton, cancelTaskButton);
 
+    // add to DOM
     newTaskForm.append(formRowOne, formRowTwo, formRowThree, formRowFour, formRowFive);
     projectHeading.append(projectName, taskSpan, newTaskButton, newTaskForm);
 
@@ -144,6 +151,7 @@ const pageLoad = () => {
     const inboxLink = document.createElement('a');
     inboxLink.classList.add('inbox-link');
     inboxLink.textContent = 'Inbox';
+
     //add to DOM
     inboxDiv.append(inboxIcon, inboxLink);
 
@@ -154,6 +162,7 @@ const pageLoad = () => {
     const todayLink = document.createElement('a');
     todayLink.classList.add('today-link');
     todayLink.textContent = 'Today';
+
     // add to DOM
     todayDiv.append(todayIcon, todayLink);
 
@@ -164,6 +173,7 @@ const pageLoad = () => {
     const sevenDaysLink = document.createElement('a');
     sevenDaysLink.classList.add('sevenDays-link');
     sevenDaysLink.textContent = '7 Days';
+
     // add to DOM
     sevenDaysDiv.append(calendarIcon, sevenDaysLink);
 
@@ -174,6 +184,7 @@ const pageLoad = () => {
     const importantLink = document.createElement('a');
     importantLink.classList.add('imp-link');
     importantLink.textContent = 'Important';
+
     // add to DOM
     importantDiv.append(importantIcon, importantLink);
 
@@ -182,17 +193,38 @@ const pageLoad = () => {
 
     const projectArray = document.createElement('div');
     projectArray.classList.add('project-array');
-    const projectOne = document.createElement('div');
-    projectOne.classList.add('project-one');
-    const projectOneNameSpan = document.createElement('span');
-    projectOneNameSpan.classList.add('project-name');
-    projectOneNameSpan.textContent = 'Default Project';
-    const deleteProjectButton = document.createElement('button');
-    deleteProjectButton.classList.add('del-btn');
-    projectOne.append(projectOneNameSpan, deleteProjectButton);
-    projectArray.append(projectOne);
+
+    for (let i = 0; i < masterArray.length; i++) {
+        const projectDiv = document.createElement('div');
+        projectDiv.classList.add('project');
+        projectDiv.id = i + 1;
+
+        const nameSpan = document.createElement('span');
+        nameSpan.classList.add('project-name');
+        nameSpan.textContent = `${masterArray[i][0]} ` + 'Project';
+
+        const deleteProjectButton = document.createElement('button');
+        deleteProjectButton.classList.add('del-btn');
+
+        // add to DOM
+        projectDiv.append(nameSpan, deleteProjectButton);
+        projectArray.appendChild(projectDiv);
+    }
+
+    // const projectOne = document.createElement('div');
+    // projectOne.classList.add('project-one');
+    // const projectOneNameSpan = document.createElement('span');
+    // projectOneNameSpan.classList.add('project-name');
+    // projectOneNameSpan.textContent = 'Default Project';
+    // const deleteProjectButton = document.createElement('button');
+    // deleteProjectButton.classList.add('del-btn');
+
+    // // add to DOM
+    // projectOne.append(projectOneNameSpan, deleteProjectButton);
+    // projectArray.append(projectOne);
 
     const actionDiv = document.createElement('div');
+
     actionDiv.classList.add('action');
 
     const addProjectButton = document.createElement('button');
@@ -217,8 +249,9 @@ const pageLoad = () => {
     const cancelProjectButton = document.createElement('button');
     cancelProjectButton.textContent = 'Cancel';
     cancelProjectButton.id = 'cancel-project';
-    projectPopUp.append(projectNameInput, saveProjectButton, cancelProjectButton);
 
+    // add to DOM
+    projectPopUp.append(projectNameInput, saveProjectButton, cancelProjectButton);
 
     // add to DOM
     actionDiv.append(addProjectButton, actionSpan, projectPopUp);

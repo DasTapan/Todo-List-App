@@ -32,7 +32,7 @@ const taskLoad = () => {
         const rawInfoDiv = document.createElement('div');
         rawInfoDiv.classList.add('raw-info', 'hidden');
 
-        // start form
+        // start edit form
         const formEdit = document.createElement('form');
         formEdit.action = '';
         formEdit.method = '';
@@ -56,6 +56,8 @@ const taskLoad = () => {
         dateInput.type = 'date';
         dateInput.name = 'due-date';
         dateInput.id = 'due-date';
+
+        // add to DOM
         formRowOne.append(titleLabel, titleInput, dueDateLabel, dateInput);
 
         const formRowTwo = document.createElement('div');
@@ -83,6 +85,8 @@ const taskLoad = () => {
         const optionThree = document.createElement('option');
         optionThree.textContent = 'Low';
         optionThree.value = 'l';
+
+        // add to DOM
         prioritySelect.append(optionOne, optionTwo, optionThree);
         formRowTwo.append(textAreaLabel, textAreaInput, priorityLabel, prioritySelect);
 
@@ -94,12 +98,14 @@ const taskLoad = () => {
         const cancelEditButton = document.createElement('button');
         cancelEditButton.id = 'cancel-edit';
         cancelEditButton.textContent = 'Cancel';
+
+        // add to DOM
         formRowThree.append(saveEditButton, cancelEditButton);
 
-
+        // add to DOM
         formEdit.append(formRowOne, formRowTwo, formRowThree);
         rawInfoDiv.append(formEdit);
-        // end form
+        // end edit form
 
         // add to DOM
         taskDiv.append(briefInfoDiv, rawInfoDiv);
