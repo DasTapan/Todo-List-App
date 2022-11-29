@@ -1,6 +1,4 @@
 const defaultProject = ['Default',];
-const gymProject = ['Gym',];
-const tourProject = ['Tour',];
-const masterArray = [defaultProject, gymProject, tourProject];
+const masterArray = [defaultProject,];
 
 export default masterArray;

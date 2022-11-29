@@ -1,3 +1,6 @@
+import masterArray from "./master-structure.js";
+import projectLoad from "./project.js";
+
 const appLogic = (event) => {
     const _targetNode = event.target;
     const _className = _targetNode.className;
@@ -29,6 +32,13 @@ const appLogic = (event) => {
                 break;
 
             case 'project-change':
+                event.preventDefault();
+                const newProject = [];
+                newProject.push(_targetNode.previousElementSibling.value);
+                masterArray.push(newProject);
+                projectLoad();
+                
+                _targetNode.previousElementSibling.value = '';
                 _targetNode.parentElement.classList.toggle('hidden');
                 break;
 

@@ -1,8 +1,5 @@
 const taskLoad = () => {
     const parentElement = document.querySelector('.task-container');
-    console.log(parentElement);
-    console.log('Har Hindu Sena ho');
-    console.log('Har Hindu Sanatani ho');
 
     for (let i = 0; i < 6; i++) {
         const taskDiv = document.createElement('div');

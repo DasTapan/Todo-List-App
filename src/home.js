@@ -1,13 +1,10 @@
-import masterArray from './master-structure.js';
 import inboxImg from './Icons/inbox-icon.png';
 import calendarImg from './Icons/calendar-icon.png';
 import impImg from './Icons/important-icon.png';
 import todayImg from './Icons/today-icon.png';
 
-console.log(masterArray);
-console.log(masterArray[0][0]);
-console.log(masterArray[1][0]);
-console.log(masterArray.length);
+const projectArray = document.createElement('div');
+projectArray.classList.add('project-array');
 
 const pageLoad = () => {
     const contentDiv = document.createElement('div');
@@ -191,25 +188,22 @@ const pageLoad = () => {
     //add to DOM
     sidebarTop.append(inboxDiv, todayDiv, sevenDaysDiv, importantDiv);
 
-    const projectArray = document.createElement('div');
-    projectArray.classList.add('project-array');
+    // for (let i = 0; i < masterArray.length; i++) {
+    //     const projectDiv = document.createElement('div');
+    //     projectDiv.classList.add('project');
+    //     projectDiv.id = i;
 
-    for (let i = 0; i < masterArray.length; i++) {
-        const projectDiv = document.createElement('div');
-        projectDiv.classList.add('project');
-        projectDiv.id = i + 1;
+    //     const nameSpan = document.createElement('span');
+    //     nameSpan.classList.add('project-name');
+    //     nameSpan.textContent = `${masterArray[i][0]} ` + 'Project';
 
-        const nameSpan = document.createElement('span');
-        nameSpan.classList.add('project-name');
-        nameSpan.textContent = `${masterArray[i][0]} ` + 'Project';
+    //     const deleteProjectButton = document.createElement('button');
+    //     deleteProjectButton.classList.add('del-btn');
 
-        const deleteProjectButton = document.createElement('button');
-        deleteProjectButton.classList.add('del-btn');
-
-        // add to DOM
-        projectDiv.append(nameSpan, deleteProjectButton);
-        projectArray.appendChild(projectDiv);
-    }
+    //     // add to DOM
+    //     projectDiv.append(nameSpan, deleteProjectButton);
+    //     projectArray.appendChild(projectDiv);
+    // }
 
     // const projectOne = document.createElement('div');
     // projectOne.classList.add('project-one');
@@ -224,7 +218,6 @@ const pageLoad = () => {
     // projectArray.append(projectOne);
 
     const actionDiv = document.createElement('div');
-
     actionDiv.classList.add('action');
 
     const addProjectButton = document.createElement('button');
@@ -258,4 +251,4 @@ const pageLoad = () => {
     sidebarBottom.append(projectArray, actionDiv);
 };
 
-export default pageLoad;
+export { projectArray, pageLoad };
