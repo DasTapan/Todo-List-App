@@ -15,6 +15,7 @@ const appLogic = (event) => {
                 masterArray.push(newProject);
                 _targetNode.firstElementChild.value = '';
                 projectLoad();
+                console.log(masterArray);
                 break;
 
             default:
@@ -48,9 +49,15 @@ const appLogic = (event) => {
                 _targetNode.parentElement.lastElementChild.classList.toggle('hidden');
                 break;
 
-            // case 'project-change':
-            //     _targetNode.parentElement.classList.toggle('hidden');
-            //     break;
+            case 'del-btn':
+                let dummyArray = [];
+                let projectId = _targetNode.parentElement.id;
+                dummyArray = masterArray.filter((element) => masterArray.indexOf(element).toString() != projectId);
+                masterArray.length = 0;
+                masterArray.push(...dummyArray);
+                projectLoad();
+                console.log(masterArray);
+                break;
 
             case 'project-unchanged':
                 _targetNode.previousElementSibling.previousElementSibling.value = '';

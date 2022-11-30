@@ -3,10 +3,10 @@ import { projectArray } from "./home.js";
 
 const projectLoad = () => {
     // clean div 
-    while(projectArray.lastElementChild) {
+    while (projectArray.lastElementChild) {
         projectArray.removeChild(projectArray.lastElementChild);
     }
-    
+
     for (let i = 0; i < masterArray.length; i++) {
         const projectDiv = document.createElement('div');
         projectDiv.classList.add('project');
