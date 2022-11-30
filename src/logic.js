@@ -5,6 +5,23 @@ const appLogic = (event) => {
     const _targetNode = event.target;
     const _className = _targetNode.className;
 
+    const _formSubmission = (className) => {
+        switch (className) {
+            case 'project-pop-up':
+                event.preventDefault();
+                _targetNode.classList.toggle('hidden');
+                const newProject = [];
+                newProject.push(_targetNode.firstElementChild.value);
+                masterArray.push(newProject);
+                _targetNode.firstElementChild.value = '';
+                projectLoad();
+                break;
+
+            default:
+                break;
+        }
+    };
+
     const _toggle = (className) => {
 
         switch (className) {
@@ -31,14 +48,12 @@ const appLogic = (event) => {
                 _targetNode.parentElement.lastElementChild.classList.toggle('hidden');
                 break;
 
-            case 'project-change':
-                event.preventDefault();
-                const newProject = [];
-                newProject.push(_targetNode.previousElementSibling.value);
-                masterArray.push(newProject);
-                projectLoad();
-                
-                _targetNode.previousElementSibling.value = '';
+            // case 'project-change':
+            //     _targetNode.parentElement.classList.toggle('hidden');
+            //     break;
+
+            case 'project-unchanged':
+                _targetNode.previousElementSibling.previousElementSibling.value = '';
                 _targetNode.parentElement.classList.toggle('hidden');
                 break;
 
@@ -55,11 +70,16 @@ const appLogic = (event) => {
         }
     };
 
-    const handle = () => {
+    const handleToggle = () => {
         _toggle(_className);
     };
 
-    return { handle };
+    const handleSubmission = () => {
+        let _sanitizedClassName = _className.split(' ')[0];
+        _formSubmission(_sanitizedClassName);
+    };
+
+    return { handleToggle, handleSubmission };
 };
 
 export default appLogic;

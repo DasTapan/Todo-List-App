@@ -9,5 +9,9 @@ projectLoad();
 taskLoad();
 
 document.addEventListener('click', (event) => {
-    appLogic(event).handle();
+    appLogic(event).handleToggle();
+});
+
+document.addEventListener('submit', (event) => {
+    appLogic(event).handleSubmission();
 });

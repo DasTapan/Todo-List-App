@@ -235,12 +235,16 @@ const pageLoad = () => {
     projectNameInput.type = 'text';
     projectNameInput.id = 'name';
     projectNameInput.name = 'name';
+    projectNameInput.setAttribute('required', '');
     const saveProjectButton = document.createElement('button');
+    saveProjectButton.type = 'submit';
     saveProjectButton.textContent = 'Save';
-    saveProjectButton.id = 'save-project';
     saveProjectButton.classList.add('project-change');
+    saveProjectButton.id = 'save-project';
     const cancelProjectButton = document.createElement('button');
+    cancelProjectButton.type = 'button';
     cancelProjectButton.textContent = 'Cancel';
+    cancelProjectButton.classList.add('project-unchanged');
     cancelProjectButton.id = 'cancel-project';
 
     // add to DOM
