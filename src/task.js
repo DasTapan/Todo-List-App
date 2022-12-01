@@ -1,7 +1,11 @@
-const taskLoad = () => {
-    const parentElement = document.querySelector('.task-container');
+import { taskContainer } from "./home.js";
 
-    for (let i = 0; i < 6; i++) {
+const taskLoad = (currentProject) => {
+    while (taskContainer.lastElementChild) {
+        taskContainer.removeChild(taskContainer.lastElementChild);
+    };
+
+    for (let i = 1; i < currentProject.length; i++) {
         const taskDiv = document.createElement('div');
         taskDiv.classList.add('task-div');
 
@@ -12,10 +16,10 @@ const taskLoad = () => {
         checkBox.setAttribute('type', 'checkbox');
         const titleSpan = document.createElement('span');
         titleSpan.classList.add('task-title');
-        titleSpan.textContent = 'Buy Milk';
+        titleSpan.textContent = currentProject[i]['title'];
         const dateSpan = document.createElement('span');
         dateSpan.classList.add('due-date');
-        dateSpan.textContent = '23/12/2022';
+        dateSpan.textContent = currentProject[i]['dueDate'];
         const delButton = document.createElement('button');
         delButton.classList.add('delete-button');
 
@@ -106,7 +110,7 @@ const taskLoad = () => {
 
         // add to DOM
         taskDiv.append(briefInfoDiv, rawInfoDiv);
-        parentElement.append(taskDiv);
+        taskContainer.append(taskDiv);
     }
 
 };

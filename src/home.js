@@ -6,6 +6,9 @@ import todayImg from './Icons/today-icon.png';
 const projectArray = document.createElement('div');
 projectArray.classList.add('project-array');
 
+const taskContainer = document.createElement('div');
+taskContainer.classList.add('task-container');
+
 const pageLoad = () => {
     const contentDiv = document.createElement('div');
     contentDiv.classList.add('content');
@@ -114,9 +117,6 @@ const pageLoad = () => {
     // add to DOM
     newTaskForm.append(formRowOne, formRowTwo, formRowThree, formRowFour, formRowFive);
     projectHeading.append(projectName, taskSpan, newTaskButton, newTaskForm);
-
-    const taskContainer = document.createElement('div');
-    taskContainer.classList.add('task-container');
 
     //add to DOM
     midsection.append(projectHeading, taskContainer);
@@ -255,4 +255,4 @@ const pageLoad = () => {
     sidebarBottom.append(projectArray, actionDiv);
 };
 
-export { projectArray, pageLoad };
+export { projectArray, taskContainer, pageLoad };
