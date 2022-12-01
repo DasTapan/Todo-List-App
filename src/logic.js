@@ -1,5 +1,6 @@
 import masterArray from "./master-structure.js";
 import projectLoad from "./project.js";
+import taskLoad from "./task.js";
 
 const appLogic = (event) => {
     const _targetNode = event.target;
@@ -70,6 +71,10 @@ const appLogic = (event) => {
 
             case 'task-button':
                 _targetNode.parentElement.parentElement.classList.toggle('hidden');
+                break;
+
+            case 'project-name':
+                taskLoad(masterArray[_targetNode.parentElement.id]);
                 break;
 
             default:

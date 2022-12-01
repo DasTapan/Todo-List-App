@@ -564,6 +564,10 @@ span.task-title:hover {
     cursor: pointer;
 }
 
+.project span:hover {
+    cursor: pointer;
+}
+
 /* Scrollbar style ends */
 
 /* My style ends */
