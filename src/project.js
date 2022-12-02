@@ -1,7 +1,7 @@
 import { masterArray } from "./master-structure.js";
 import { projectArray } from "./home.js";
 
-console.log(masterArray);
+// console.log(masterArray);
 const projectLoad = () => {
     // clean div 
     while (projectArray.lastElementChild) {

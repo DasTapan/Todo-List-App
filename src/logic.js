@@ -80,6 +80,16 @@ const appLogic = (event) => {
                 taskLoad(masterArray[getCurrentIndex()]);
                 break;
 
+            case 'delete-button':
+                let dummy = [];
+                let targetedProject = masterArray[getCurrentIndex()];
+                let projId = _targetNode.parentElement.parentElement.id;
+                dummy = targetedProject.filter((element) => targetedProject.indexOf(element).toString() != projId);
+                targetedProject.length = 0;
+                targetedProject.push(...dummy);
+                taskLoad(targetedProject);
+                break;
+
             default:
                 break;
         }

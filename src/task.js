@@ -7,6 +7,7 @@ const taskLoad = (currentProject) => {
 
     for (let i = 1; i < currentProject.length; i++) {
         const taskDiv = document.createElement('div');
+        taskDiv.id = i;
         taskDiv.classList.add('task-div');
 
         const briefInfoDiv = document.createElement('div');
