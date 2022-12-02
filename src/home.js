@@ -60,6 +60,7 @@ const pageLoad = () => {
     titleLabel.setAttribute('for', 'title');
     titleLabel.textContent = 'Title :'
     const titleInput = document.createElement('input');
+    titleInput.setAttribute('required', '');
     titleInput.type = 'text';
     titleInput.id = 'title';
     titleInput.name = 'title';
@@ -81,6 +82,7 @@ const pageLoad = () => {
     priorityLabel.textContent = 'Priority :';
     priorityLabel.setAttribute('for', 'priority');
     const prioritySelect = document.createElement('select');
+    prioritySelect.setAttribute('required', '');
     prioritySelect.name = 'priority';
     prioritySelect.id = 'priority';
     const optionOne = document.createElement('option');
@@ -109,9 +111,11 @@ const pageLoad = () => {
     const formRowFive = document.createElement('div');
     formRowFive.classList.add('form-row');
     const saveTaskButton = document.createElement('button');
-    saveTaskButton.classList.add('task-button');
+    saveTaskButton.type = 'submit';
+    saveTaskButton.classList.add('task-submit-button');
     saveTaskButton.textContent = 'Save';
     const cancelTaskButton = document.createElement('button');
+    cancelTaskButton.type = 'button';
     cancelTaskButton.classList.add('task-button');
     cancelTaskButton.textContent = 'Cancel';
     formRowFive.append(saveTaskButton, cancelTaskButton);
