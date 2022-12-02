@@ -2,12 +2,15 @@ import inboxImg from './Icons/inbox-icon.png';
 import calendarImg from './Icons/calendar-icon.png';
 import impImg from './Icons/important-icon.png';
 import todayImg from './Icons/today-icon.png';
+import { getCurrentIndex, masterArray } from './master-structure.js';
 
 const projectArray = document.createElement('div');
 projectArray.classList.add('project-array');
 
 const taskContainer = document.createElement('div');
 taskContainer.classList.add('task-container');
+
+const projectName = document.createElement('span'); // this is in global scope only to export
 
 const pageLoad = () => {
     const contentDiv = document.createElement('div');
@@ -38,8 +41,7 @@ const pageLoad = () => {
 
     const projectHeading = document.createElement('div');
     projectHeading.classList.add('project-heading');
-    const projectName = document.createElement('span');
-    projectName.textContent = 'Default';
+    projectName.textContent = masterArray[getCurrentIndex()][0];
     const taskSpan = document.createElement('span');
     taskSpan.textContent = 'Add Task';
     const newTaskButton = document.createElement('button');
@@ -255,4 +257,4 @@ const pageLoad = () => {
     sidebarBottom.append(projectArray, actionDiv);
 };
 
-export { projectArray, taskContainer, pageLoad };
+export { projectArray, taskContainer, projectName, pageLoad };

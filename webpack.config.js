@@ -8,6 +8,8 @@ module.exports = {
         home: './src/home.js',
         task: './src/task.js',
         logic: './src/logic.js',
+        project: './src/project.js',
+        masterStructure: './src/master-structure.js',
     },
     devtool: 'inline-source-map',
     devServer: {

@@ -1,6 +1,7 @@
-import masterArray from "./master-structure.js";
+import { toggleIndex, getCurrentIndex, masterArray } from "./master-structure.js";
 import projectLoad from "./project.js";
 import taskLoad from "./task.js";
+import { projectName } from "./home.js";
 
 const appLogic = (event) => {
     const _targetNode = event.target;
@@ -74,7 +75,9 @@ const appLogic = (event) => {
                 break;
 
             case 'project-name':
-                taskLoad(masterArray[_targetNode.parentElement.id]);
+                toggleIndex(Number(_targetNode.parentElement.id));
+                projectName.textContent = masterArray[getCurrentIndex()][0];
+                taskLoad(masterArray[getCurrentIndex()]);
                 break;
 
             default:

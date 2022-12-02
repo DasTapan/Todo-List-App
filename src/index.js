@@ -3,7 +3,7 @@ import { pageLoad } from './home.js';
 import projectLoad from './project.js';
 import taskLoad from './task.js';
 import appLogic from './logic.js';
-import masterArray from './master-structure.js';
+import { masterArray } from './master-structure.js';
 
 pageLoad();
 projectLoad();
