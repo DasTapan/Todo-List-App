@@ -27,12 +27,13 @@ const appLogic = (event) => {
                 console.log(collection);
                 const newTask = {
                     status:'',
-                    title: collection[0].querySelector(':nth-child(2)').value,
                     details: collection[1].querySelector(':nth-child(2)').value,
+                    title: collection[0].querySelector(':nth-child(2)').value,
+                    dueDate: collection[3].querySelector(':nth-child(2)').value,
                     priority: collection[2].querySelector(':nth-child(2)').value,
-                    dueDate: collection[3].querySelector(':nth-child(2)').value
                 };
                 masterArray[getCurrentIndex()].push(newTask);
+                taskLoad(masterArray[getCurrentIndex()]);
                 console.log(masterArray);
                 console.log(masterArray[getCurrentIndex()]);
                 break;

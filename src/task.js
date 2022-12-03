@@ -24,6 +24,14 @@ const taskLoad = (currentProject) => {
         const delButton = document.createElement('button');
         delButton.classList.add('delete-button');
 
+        if (currentProject[i]['priority'] === 'h') {
+            titleSpan.classList.add('high-priority')
+            dateSpan.classList.add('high-priority')
+        } else if (currentProject[i]['priority'] === 'm') {
+            titleSpan.classList.add('medium-priority')
+            dateSpan.classList.add('medium-priority')
+        };
+
         const demoButton = document.createElement('button');
         demoButton.classList.add('demo-button');
         demoButton.textContent = 'Demo';
