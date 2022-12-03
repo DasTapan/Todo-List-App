@@ -57,6 +57,7 @@ const taskLoad = (currentProject) => {
         titleInput.type = 'text';
         titleInput.id = 'title';
         titleInput.name = 'title';
+        titleInput.value = currentProject[i]['title'];
         const dateDiv = document.createElement('div');
         dateDiv.classList.add('date-div');
         const dueDateLabel = document.createElement('label');
@@ -66,6 +67,7 @@ const taskLoad = (currentProject) => {
         dateInput.type = 'date';
         dateInput.name = 'due-date';
         dateInput.id = 'due-date';
+        dateInput.value = currentProject[i]['dueDate'];
 
         // add to DOM
         formRowOne.append(titleLabel, titleInput, dueDateLabel, dateInput);
@@ -78,6 +80,7 @@ const taskLoad = (currentProject) => {
         const textAreaInput = document.createElement('textarea');
         textAreaInput.name = 'details';
         textAreaInput.id = 'details';
+        textAreaInput.textContent = currentProject[i]['details'];
         const priorityDiv = document.createElement('div');
         priorityDiv.classList.add('priority-div');
         const priorityLabel = document.createElement('label');
@@ -98,6 +101,9 @@ const taskLoad = (currentProject) => {
 
         // add to DOM
         prioritySelect.append(optionOne, optionTwo, optionThree);
+        if(currentProject[i]['priority'] === 'h') prioritySelect.value = optionOne.value
+        else if(currentProject[i]['priority'] === 'm') prioritySelect.value = optionTwo.value
+        else if(currentProject[i]['priority'] === 'l') prioritySelect.value = optionThree.value
         formRowTwo.append(textAreaLabel, textAreaInput, priorityLabel, prioritySelect);
 
         const formRowThree = document.createElement('div');

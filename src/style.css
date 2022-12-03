@@ -320,21 +320,8 @@ button.add-project {
     cursor: pointer;
 }
 
-.task-container .task-div:nth-child(1),
-.task-container .task-div:nth-child(5) {
-    /* color: #00008b; */
-    /* color: #494CA2; */
-    color: #CF0A0A;
-}
-
-.task-container .task-div:nth-child(3) {
-    color: #F0FF42;
-}
-
 .brief-info {
     height: 50px;
-    /* background-color: #F3E1E1; */
-    /* background-color: #EDDFB3; */
     padding: 5px;
     border-radius: 10px;
 }

@@ -24,7 +24,6 @@ const appLogic = (event) => {
                 event.preventDefault();
                 _targetNode.classList.toggle('hidden');
                 const collection = _targetNode.children;
-                console.log(collection);
                 const newTask = {
                     status:'',
                     details: collection[1].querySelector(':nth-child(2)').value,
@@ -34,7 +33,7 @@ const appLogic = (event) => {
                 };
                 masterArray[getCurrentIndex()].push(newTask);
                 taskLoad(masterArray[getCurrentIndex()]);
-                console.log(masterArray);
+                // console.log(masterArray);
                 console.log(masterArray[getCurrentIndex()]);
                 break;
 
@@ -114,7 +113,8 @@ const appLogic = (event) => {
     };
 
     const handleToggle = () => {
-        _toggle(_className);
+        // let processedClassName = _className.split(' ')[0];
+        _toggle(_className.split(' ')[0]);
     };
 
     const handleSubmission = () => {
