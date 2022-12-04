@@ -109,10 +109,13 @@ const taskLoad = (currentProject) => {
         const formRowThree = document.createElement('div');
         formRowThree.classList.add('form-row');
         const saveEditButton = document.createElement('button');
+        saveEditButton.type = 'submit';
         saveEditButton.id = 'save-edit';
         saveEditButton.textContent = 'Save';
         const cancelEditButton = document.createElement('button');
+        cancelEditButton.type = 'button';
         cancelEditButton.id = 'cancel-edit';
+        cancelEditButton.classList.add('cancel-task');
         cancelEditButton.textContent = 'Cancel';
 
         // add to DOM

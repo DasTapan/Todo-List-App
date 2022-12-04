@@ -25,7 +25,7 @@ const appLogic = (event) => {
                 _targetNode.classList.toggle('hidden');
                 const collection = _targetNode.children;
                 const newTask = {
-                    status:'',
+                    status: '',
                     details: collection[1].querySelector(':nth-child(2)').value,
                     title: collection[0].querySelector(':nth-child(2)').value,
                     dueDate: collection[3].querySelector(':nth-child(2)').value,
@@ -33,8 +33,27 @@ const appLogic = (event) => {
                 };
                 masterArray[getCurrentIndex()].push(newTask);
                 taskLoad(masterArray[getCurrentIndex()]);
-                // console.log(masterArray);
                 console.log(masterArray[getCurrentIndex()]);
+                break;
+
+            case 'edit-details':
+                event.preventDefault();
+                _targetNode.classList.toggle('hidden');
+                let currentTaskIndex = Number(_targetNode.parentElement.parentElement.id);
+                const taskCollection = _targetNode.children;
+                console.log(currentTaskIndex);
+                console.log(masterArray[getCurrentIndex()][currentTaskIndex]);
+                // console.log(taskCollection);
+                const editedTask = {
+                    status: '',
+                    details: taskCollection[1].querySelector(':nth-child(2)').value,
+                    title: taskCollection[0].querySelector(':nth-child(2)').value,
+                    dueDate: taskCollection[0].querySelector(':nth-child(4)').value,
+                    priority: taskCollection[1].querySelector(':nth-child(4)').value,
+                };
+                masterArray[getCurrentIndex()][currentTaskIndex] = editedTask;
+                taskLoad(masterArray[getCurrentIndex()]);
+                console.log(masterArray[getCurrentIndex()][currentTaskIndex]);
                 break;
 
             default:
@@ -47,21 +66,22 @@ const appLogic = (event) => {
         switch (className) {
 
             case 'task-title':
+                // does not use toggle because display: flex & none doesn't co exist
                 _targetNode.parentElement.classList.remove('brief-layout');
                 _targetNode.parentElement.classList.add('hidden');
                 _targetNode.parentElement.nextElementSibling.classList.remove('hidden');
                 break;
 
-            case 'save':
-                _targetNode.parentElement.classList.add('hidden');
-                _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
-                _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
-                break;
+            // case 'save':
+            //     _targetNode.parentElement.classList.add('hidden');
+            //     _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
+            //     _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
+            //     break;
 
-            case 'cancel':
-                _targetNode.parentElement.classList.add('hidden');
-                _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
-                _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
+            case 'cancel-task':
+                _targetNode.parentElement.parentElement.parentElement.previousElementSibling.classList.remove('hidden');
+                _targetNode.parentElement.parentElement.parentElement.previousElementSibling.classList.add('brief-layout');
+                _targetNode.parentElement.parentElement.parentElement.classList.add('hidden');
                 break;
 
             case 'add-project':
@@ -113,7 +133,6 @@ const appLogic = (event) => {
     };
 
     const handleToggle = () => {
-        // let processedClassName = _className.split(' ')[0];
         _toggle(_className.split(' ')[0]);
     };
 
