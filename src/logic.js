@@ -2,7 +2,7 @@ import { toggleIndex, getCurrentIndex, masterArray } from "./master-structure.js
 import projectLoad from "./project.js";
 import taskLoad from "./task.js";
 import { projectName } from "./home.js";
-import { parseISO,format } from "date-fns";
+import { parseISO, format } from "date-fns";
 
 const appLogic = (event) => {
     const _targetNode = event.target;
@@ -30,7 +30,7 @@ const appLogic = (event) => {
                     status: '',
                     details: collection[1].querySelector(':nth-child(2)').value,
                     title: collection[0].querySelector(':nth-child(2)').value,
-                    dueDate: format(parsedDate, 'dd/MM/yyyy'),
+                    dueDate: format(parsedDate, 'dd-MM-yyyy'),
                     priority: collection[2].querySelector(':nth-child(2)').value,
                 };
                 masterArray[getCurrentIndex()].push(newTask);
