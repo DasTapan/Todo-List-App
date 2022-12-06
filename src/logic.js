@@ -3,6 +3,7 @@ import projectLoad from "./project.js";
 import taskLoad from "./task.js";
 import { projectName } from "./home.js";
 import { parseISO, format } from "date-fns";
+import storeData from "./storage.js";
 
 const appLogic = (event) => {
     const _targetNode = event.target;
@@ -17,6 +18,7 @@ const appLogic = (event) => {
                 newProject.push(_targetNode.firstElementChild.value);
                 masterArray.push(newProject);
                 _targetNode.firstElementChild.value = '';
+                storeData();
                 projectLoad();
                 console.log(masterArray);
                 break;
@@ -35,6 +37,7 @@ const appLogic = (event) => {
                 };
                 masterArray[getCurrentIndex()].push(newTask);
                 taskLoad(masterArray[getCurrentIndex()]);
+                storeData();
                 console.log(masterArray[getCurrentIndex()]);
                 break;
 
@@ -55,6 +58,7 @@ const appLogic = (event) => {
                 };
                 masterArray[getCurrentIndex()][currentTaskIndex] = editedTask;
                 taskLoad(masterArray[getCurrentIndex()]);
+                storeData();
                 console.log(masterArray[getCurrentIndex()][currentTaskIndex]);
                 break;
 
@@ -96,6 +100,7 @@ const appLogic = (event) => {
                 dummyArray = masterArray.filter((element) => masterArray.indexOf(element).toString() != projectId);
                 masterArray.length = 0;
                 masterArray.push(...dummyArray);
+                storeData();
                 projectLoad();
                 console.log(masterArray);
                 break;
@@ -126,6 +131,7 @@ const appLogic = (event) => {
                 dummy = targetedProject.filter((element) => targetedProject.indexOf(element).toString() != projId);
                 targetedProject.length = 0;
                 targetedProject.push(...dummy);
+                storeData();
                 taskLoad(targetedProject);
                 break;
 

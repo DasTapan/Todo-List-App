@@ -1,8 +1,8 @@
 let _currentProjectIndex = 0;
 
-const defaultProject = [
-    'Default',
-];
+const defaultProject = ['Default',];
+
+const masterArray = [defaultProject,];
 
 const _setProjectIndex = (newIndex) => {
     _currentProjectIndex = newIndex;
@@ -15,7 +15,5 @@ const toggleIndex = (newIndex) => {
 const getCurrentIndex = () => {
     return _currentProjectIndex;
 };
-
-const masterArray = [defaultProject,];
 
 export { toggleIndex, getCurrentIndex, masterArray };
