@@ -10,6 +10,8 @@ module.exports = {
         logic: './src/logic.js',
         project: './src/project.js',
         masterStructure: './src/master-structure.js',
+        storage: './src/storage.js',
+        render: './src/render.js',
     },
     devtool: 'inline-source-map',
     devServer: {
