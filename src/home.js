@@ -194,35 +194,6 @@ const pageLoad = () => {
     //add to DOM
     sidebarTop.append(inboxDiv, todayDiv, sevenDaysDiv, importantDiv);
 
-    // for (let i = 0; i < masterArray.length; i++) {
-    //     const projectDiv = document.createElement('div');
-    //     projectDiv.classList.add('project');
-    //     projectDiv.id = i;
-
-    //     const nameSpan = document.createElement('span');
-    //     nameSpan.classList.add('project-name');
-    //     nameSpan.textContent = `${masterArray[i][0]} ` + 'Project';
-
-    //     const deleteProjectButton = document.createElement('button');
-    //     deleteProjectButton.classList.add('del-btn');
-
-    //     // add to DOM
-    //     projectDiv.append(nameSpan, deleteProjectButton);
-    //     projectArray.appendChild(projectDiv);
-    // }
-
-    // const projectOne = document.createElement('div');
-    // projectOne.classList.add('project-one');
-    // const projectOneNameSpan = document.createElement('span');
-    // projectOneNameSpan.classList.add('project-name');
-    // projectOneNameSpan.textContent = 'Default Project';
-    // const deleteProjectButton = document.createElement('button');
-    // deleteProjectButton.classList.add('del-btn');
-
-    // // add to DOM
-    // projectOne.append(projectOneNameSpan, deleteProjectButton);
-    // projectArray.append(projectOne);
-
     const actionDiv = document.createElement('div');
     actionDiv.classList.add('action');
 

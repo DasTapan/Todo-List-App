@@ -2,7 +2,7 @@ import { toggleIndex, getCurrentIndex, masterArray } from "./master-structure.js
 import projectLoad from "./project.js";
 import taskLoad from "./task.js";
 import { projectName } from "./home.js";
-import { parseISO, format } from "date-fns";
+import { format, parseISO } from "date-fns";
 import storeData from "./storage.js";
 
 const appLogic = (event) => {
@@ -11,6 +11,7 @@ const appLogic = (event) => {
 
     const _formSubmission = (className) => {
         switch (className) {
+            //new project
             case 'project-pop-up':
                 event.preventDefault();
                 _targetNode.classList.toggle('hidden');
@@ -23,22 +24,21 @@ const appLogic = (event) => {
                 console.log(masterArray);
                 break;
 
+            //new task 
             case 'task-form':
                 event.preventDefault();
                 _targetNode.classList.toggle('hidden');
                 const collection = _targetNode.children;
-                let parsedDate = parseISO(collection[3].querySelector(':nth-child(2)').value);
                 const newTask = {
                     status: '',
                     details: collection[1].querySelector(':nth-child(2)').value,
                     title: collection[0].querySelector(':nth-child(2)').value,
-                    dueDate: format(parsedDate, 'dd-MM-yyyy'),
+                    dueDate: format(parseISO(collection[3].querySelector(':nth-child(2)').value), 'dd-MM-yyyy'),
                     priority: collection[2].querySelector(':nth-child(2)').value,
                 };
                 masterArray[getCurrentIndex()].push(newTask);
                 taskLoad(masterArray[getCurrentIndex()]);
                 storeData();
-                console.log(masterArray[getCurrentIndex()]);
                 break;
 
             case 'edit-details':
@@ -46,9 +46,6 @@ const appLogic = (event) => {
                 _targetNode.classList.toggle('hidden');
                 let currentTaskIndex = Number(_targetNode.parentElement.parentElement.id);
                 const taskCollection = _targetNode.children;
-                console.log(currentTaskIndex);
-                console.log(masterArray[getCurrentIndex()][currentTaskIndex]);
-                // console.log(taskCollection);
                 const editedTask = {
                     status: '',
                     details: taskCollection[1].querySelector(':nth-child(2)').value,
@@ -59,7 +56,6 @@ const appLogic = (event) => {
                 masterArray[getCurrentIndex()][currentTaskIndex] = editedTask;
                 taskLoad(masterArray[getCurrentIndex()]);
                 storeData();
-                console.log(masterArray[getCurrentIndex()][currentTaskIndex]);
                 break;
 
             default:
@@ -77,12 +73,6 @@ const appLogic = (event) => {
                 _targetNode.parentElement.classList.add('hidden');
                 _targetNode.parentElement.nextElementSibling.classList.remove('hidden');
                 break;
-
-            // case 'save':
-            //     _targetNode.parentElement.classList.add('hidden');
-            //     _targetNode.parentElement.previousElementSibling.classList.remove('hidden');
-            //     _targetNode.parentElement.previousElementSibling.classList.add('brief-layout');
-            //     break;
 
             case 'cancel-task':
                 _targetNode.parentElement.parentElement.parentElement.previousElementSibling.classList.remove('hidden');
@@ -102,7 +92,6 @@ const appLogic = (event) => {
                 masterArray.push(...dummyArray);
                 storeData();
                 projectLoad();
-                console.log(masterArray);
                 break;
 
             case 'project-unchanged':

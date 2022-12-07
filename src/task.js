@@ -1,4 +1,5 @@
 import { taskContainer } from "./home.js";
+import { masterArray } from "./master-structure.js";
 
 const taskLoad = (currentProject) => {
     while (taskContainer.lastElementChild) {
@@ -31,10 +32,6 @@ const taskLoad = (currentProject) => {
             titleSpan.classList.add('medium-priority')
             dateSpan.classList.add('medium-priority')
         };
-
-        const demoButton = document.createElement('button');
-        demoButton.classList.add('demo-button');
-        demoButton.textContent = 'Demo';
 
         // add to DOM
         briefInfoDiv.append(checkBox, titleSpan, dateSpan, delButton);
@@ -101,9 +98,9 @@ const taskLoad = (currentProject) => {
 
         // add to DOM
         prioritySelect.append(optionOne, optionTwo, optionThree);
-        if(currentProject[i]['priority'] === 'h') prioritySelect.value = optionOne.value
-        else if(currentProject[i]['priority'] === 'm') prioritySelect.value = optionTwo.value
-        else if(currentProject[i]['priority'] === 'l') prioritySelect.value = optionThree.value
+        if (currentProject[i]['priority'] === 'h') prioritySelect.value = optionOne.value
+        else if (currentProject[i]['priority'] === 'm') prioritySelect.value = optionTwo.value
+        else if (currentProject[i]['priority'] === 'l') prioritySelect.value = optionThree.value
         formRowTwo.append(textAreaLabel, textAreaInput, priorityLabel, prioritySelect);
 
         const formRowThree = document.createElement('div');

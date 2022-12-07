@@ -10,6 +10,7 @@ const _retrieveData = () => {
 };
 
 if (!localStorage.getItem('masterArray')) {
+    //populate with this if nothing is stored in localStorage
     masterArray.length = 0;
     masterArray[0] = defaultProject;
 } else {
